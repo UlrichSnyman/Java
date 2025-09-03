@@ -5,5 +5,6 @@ class DogTestDrive {
     Dog d = new Dog();
     d.size = 40;
     d.bark();
+      System.out.println( d.size);
   }
 }
