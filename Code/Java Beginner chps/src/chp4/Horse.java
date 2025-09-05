@@ -1,4 +1,4 @@
-package ch4;
+package chp4;
 
 class Horse {
   private double height = 15.2;

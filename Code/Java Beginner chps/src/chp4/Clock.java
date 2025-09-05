@@ -1,4 +1,4 @@
-package ch4;
+package chp4;
 
 class Clock {
   String time;

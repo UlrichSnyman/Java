@@ -1,4 +1,4 @@
-package ch4;
+package chp4;
 
 class GoodDog {
   private int size;

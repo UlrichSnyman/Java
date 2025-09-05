@@ -1,4 +1,4 @@
-package ch4;
+package chp4;
 
 public class Puzzle4 {
   public static void main(String[] args) {

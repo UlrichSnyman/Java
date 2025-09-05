@@ -1,4 +1,4 @@
-package ch4;
+package chp4;
 
 public class Sharpen {
   int calcArea(int height, int width) {
