@@ -33,7 +33,9 @@ class Song {
   private String title;
 
   public void setArtist(String artist) {
-    this.artist = artist;
+
+
+      this.artist = artist;
   }
 
   public String getArtist() {
