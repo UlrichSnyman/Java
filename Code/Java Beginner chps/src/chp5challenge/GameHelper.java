@@ -33,7 +33,7 @@ public class GameHelper {
         }
 
         while (!success & attempts++ < 200) { // Main search loop
-            location = (int) (Math.random() * gridSize); // Get a random starting point
+            location = (int) (Math.random() * gridSize); // Get a random starting point 0-48
 
             int x = 0; // Nth position in the ship to be placed
             success = true; // Assume success

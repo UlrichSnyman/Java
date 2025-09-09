@@ -43,8 +43,8 @@ public class BattleshipGame {
         numOfGuesses++;
         String result = "miss";
 
-        for (int i = 0; i < ships.size(); i++) {
-            Ship shipToTest = ships.get(i);
+        for (int i = 0; i < ships.size(); i++) { // Loop through all ships
+            Ship shipToTest = ships.get(i); // Get the current ship
             result = shipToTest.checkYourself(userGuess);
 
             if (result.equals("hit")) {
