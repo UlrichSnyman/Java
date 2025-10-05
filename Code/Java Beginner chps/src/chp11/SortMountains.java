@@ -15,10 +15,10 @@ public class SortMountains {
     mountains.add(new Mountain("Castle", 14265));
     System.out.println("as entered:\n" + mountains);
 
-    mountains.sort((mount1, mount2) -> mount1.name.compareTo(mount2.name));
+    mountains.sort((m1, m2) -> m1.name.compareTo(m2.name));
     System.out.println("by name:\n" + mountains);
 
-    mountains.sort((mount1, mount2) -> mount2.height - mount1.height);
+    mountains.sort((m1, m2) -> m2.height - m1.height);
     System.out.println("by height:\n" + mountains);
   }
 }
@@ -27,7 +27,7 @@ class Mountain {
   String name;
   int height;
 
-  Mountain(String name, int height) {
+  public Mountain(String name, int height) {
     this.name = name;
     this.height = height;
   }
