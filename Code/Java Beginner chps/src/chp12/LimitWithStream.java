@@ -1,4 +1,4 @@
-package ch12;
+package chp12;
 
 import java.util.List;
 import java.util.stream.Collectors;

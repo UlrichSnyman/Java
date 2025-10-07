@@ -1,4 +1,4 @@
-package ch12;
+package chp12;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,5 +15,5 @@ public class CoffeeOrder {
                                            .distinct()
                                            .collect(Collectors.toList());
     System.out.println(coffeesEndingInO);
-  }
+  } 
 }

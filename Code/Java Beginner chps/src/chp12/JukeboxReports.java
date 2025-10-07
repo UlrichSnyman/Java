@@ -1,4 +1,4 @@
-package ch12;
+package chp12;
 
 public class JukeboxReports {
   public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ch12;
+package chp12;
 
 public class Song {
   private final String title;

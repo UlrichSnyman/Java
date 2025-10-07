@@ -1,4 +1,4 @@
-package ch12;
+package chp12;
 
 import java.util.ArrayList;
 import java.util.Comparator;

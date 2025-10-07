@@ -1,4 +1,4 @@
-package ch12;// JukeboxV3 - mock i/o and "played least"
+package chp12;// JukeboxV3 - mock i/o and "played least"
 
 import java.util.ArrayList;
 import java.util.Collections;
