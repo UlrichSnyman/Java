@@ -15,5 +15,5 @@ public class CoffeeOrder {
                                            .distinct()
                                            .collect(Collectors.toList());
     System.out.println(coffeesEndingInO);
-  } 
+  }
 }

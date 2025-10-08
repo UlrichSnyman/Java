@@ -7,13 +7,13 @@ import java.util.function.Supplier;
 
 public class BeTheCompiler {
   public static void main(String[] args) {
-    Runnable runnable = () -> System.out.println("Hi!");
-    Consumer<String> consumer = s -> System.out.println(s);
+//    Runnable runnable = () -> System.out.println("Hi!");
+//    Consumer<String> consumer = s -> System.out.println(s);
 //    Supplier<String> supplier3 = () -> System.out.println("Some string");
 //    Consumer<String> consumer2 = (s1, s2) -> System.out.println(s1 + s2);
 //    Runnable runnable2 = (String str) -> System.out.println(str);
-    Function<String, Integer> function = s -> s.length();
-    Supplier<String> supplier = () -> "Some string";
+//    Function<String, Integer> function = s -> s.length();
+//    Supplier<String> supplier = () -> "Some string";
 //    Consumer<String> consumer3 = s -> "String" + s;
 //    Function<String, Integer> function3 = (Integer i) -> "i = " + i;
 //    Supplier<String> supplier2 = s -> "Some string: " + s;
