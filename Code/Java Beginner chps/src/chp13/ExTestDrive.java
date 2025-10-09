@@ -1,4 +1,4 @@
-package ch13;
+package chp13;
 
 class MyEx extends Exception { }
 

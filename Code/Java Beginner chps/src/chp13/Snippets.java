@@ -1,4 +1,4 @@
-package ch13;
+package chp13;
 
 public class Snippets {
   private boolean abandonAllHope;

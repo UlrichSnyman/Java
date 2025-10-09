@@ -1,4 +1,4 @@
-package ch13.sharpen;
+package chp13.sharpen;
 
 public class Risky {
   public void doRisky() throws DeltaEx {

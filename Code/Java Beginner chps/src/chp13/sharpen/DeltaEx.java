@@ -1,4 +1,4 @@
-package ch13.sharpen;
+package chp13.sharpen;
 
 public class DeltaEx extends Exception {
 }
