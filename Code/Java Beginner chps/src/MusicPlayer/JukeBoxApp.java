@@ -5,15 +5,11 @@ import MusicPlayer.Song;
 import MusicPlayer.Jukebox;
 import java.util.List;
 
+import MusicPlayer.JukeboxGui;
+
 public class JukeBoxApp {
     public static void main(String[] args) {
-        // 1. Load the data
-        List<Song> songs = SongLoader.loadSongs();
-
-        // 2. Create the main application object
-        Jukebox jukebox = new Jukebox(songs);
-
-        // 3. Start the application
-        jukebox.play();
+        // Create an instance of the GUI and run it
+        new JukeboxGui().buildGui();
     }
 }
