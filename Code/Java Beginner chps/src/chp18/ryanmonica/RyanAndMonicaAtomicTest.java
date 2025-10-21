@@ -1,4 +1,4 @@
-package ch18.ryanmonica;
+package chp18.ryanmonica;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;

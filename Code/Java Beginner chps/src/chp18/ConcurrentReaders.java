@@ -1,4 +1,4 @@
-package ch18;
+package chp18;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -20,7 +20,8 @@ public class ConcurrentReaders {
   }
 }
 
-final class Chat {
+final class
+Chat {
   private final String message;
   private final LocalDateTime timestamp;
 

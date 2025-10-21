@@ -1,4 +1,4 @@
-package ch18;
+package chp18;
 
 public class ImmutableData {
   final String name;

@@ -1,4 +1,4 @@
-package ch18.exercise1;
+package chp18.exercise1;
 
 import java.util.*;
 import java.util.concurrent.*;
