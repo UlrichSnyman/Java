@@ -65,7 +65,7 @@ public class BeatBoxFinal {
         // open connection to the server
         try {
             // Attempt to connect to the server at localhost on port 4242
-            Socket socket = new Socket("127.0.0.1", 4242);
+            Socket socket = new Socket("192.168.0.119", 4242);
 
             // Create output stream for sending data to server
             out = new ObjectOutputStream(socket.getOutputStream());
