@@ -5,10 +5,22 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner;
         HashMap<String, Integer> teamPoints = new HashMap<>();
         
-        System.out.println("Enter match results (one per line). Enter 'done' when finished:");
+        // Check if file path is provided as argument
+        if (args.length > 0) {
+            try {
+                File inputFile = new File(args[0]);
+                scanner = new Scanner(inputFile);
+            } catch (FileNotFoundException e) {
+                System.err.println("Error: File '" + args[0] + "' not found.");
+                return;
+            }
+        } else {
+            scanner = new Scanner(System.in);
+            System.out.println("Enter match results (one per line). Enter 'done' when finished:");
+        }
         
         // Read match results
         while (scanner.hasNextLine()) {
@@ -25,43 +37,65 @@ public class Main {
     }
     
     private static void processMatch(String matchResult, HashMap<String, Integer> teamPoints) {
-        // Split by comma to get both teams
-        String[] teams = matchResult.split(",");
-        if (teams.length != 2) {
-            System.out.println("Invalid input format: " + matchResult);
-            return;
+        try {
+            // Split by comma to get both teams
+            String[] teams = matchResult.split(",");
+            if (teams.length != 2) {
+                System.out.println("Invalid input format: " + matchResult);
+                return;
+            }
+            
+            // Parse team1
+            String team1Data = teams[0].trim();
+            if (team1Data.isEmpty() || team1Data.lastIndexOf(' ') == -1) {
+                System.out.println("Invalid team1 format: " + matchResult);
+                return;
+            }
+            String[] team1Parts = team1Data.split("\\s+");
+            if (team1Parts.length < 2) {
+                System.out.println("Invalid team1 format: " + matchResult);
+                return;
+            }
+            int team1Score = Integer.parseInt(team1Parts[team1Parts.length - 1]);
+            String team1Name = team1Data.substring(0, team1Data.lastIndexOf(' ')).trim();
+            
+            // Parse team2
+            String team2Data = teams[1].trim();
+            if (team2Data.isEmpty() || team2Data.lastIndexOf(' ') == -1) {
+                System.out.println("Invalid team2 format: " + matchResult);
+                return;
+            }
+            String[] team2Parts = team2Data.split("\\s+");
+            if (team2Parts.length < 2) {
+                System.out.println("Invalid team2 format: " + matchResult);
+                return;
+            }
+            int team2Score = Integer.parseInt(team2Parts[team2Parts.length - 1]);
+            String team2Name = team2Data.substring(0, team2Data.lastIndexOf(' ')).trim();
+            
+            // Calculate points
+            int team1Points = 0;
+            int team2Points = 0;
+            
+            if (team1Score > team2Score) {
+                team1Points = 3;  // team1 wins
+                team2Points = 0;  // team2 loses
+            } else if (team1Score < team2Score) {
+                team1Points = 0;  // team1 loses
+                team2Points = 3;  // team2 wins
+            } else {
+                team1Points = 1;  // draw
+                team2Points = 1;  // draw
+            }
+            
+            // Update team points
+            teamPoints.put(team1Name, teamPoints.getOrDefault(team1Name, 0) + team1Points);
+            teamPoints.put(team2Name, teamPoints.getOrDefault(team2Name, 0) + team2Points);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid score format: " + matchResult);
+        } catch (Exception e) {
+            System.out.println("Error processing match: " + matchResult);
         }
-        
-        // Parse team1
-        String team1Data = teams[0].trim();
-        String[] team1Parts = team1Data.split("\\s+");
-        int team1Score = Integer.parseInt(team1Parts[team1Parts.length - 1]);
-        String team1Name = team1Data.substring(0, team1Data.lastIndexOf(' ')).trim();
-        
-        // Parse team2
-        String team2Data = teams[1].trim();
-        String[] team2Parts = team2Data.split("\\s+");
-        int team2Score = Integer.parseInt(team2Parts[team2Parts.length - 1]);
-        String team2Name = team2Data.substring(0, team2Data.lastIndexOf(' ')).trim();
-        
-        // Calculate points
-        int team1Points = 0;
-        int team2Points = 0;
-        
-        if (team1Score > team2Score) {
-            team1Points = 3;  // team1 wins
-            team2Points = 0;  // team2 loses
-        } else if (team1Score < team2Score) {
-            team1Points = 0;  // team1 loses
-            team2Points = 3;  // team2 wins
-        } else {
-            team1Points = 1;  // draw
-            team2Points = 1;  // draw
-        }
-        
-        // Update team points
-        teamPoints.put(team1Name, teamPoints.getOrDefault(team1Name, 0) + team1Points);
-        teamPoints.put(team2Name, teamPoints.getOrDefault(team2Name, 0) + team2Points);
     }
     
     private static void displayRankings(HashMap<String, Integer> teamPoints) {
