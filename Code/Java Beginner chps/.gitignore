@@ -29,3 +29,6 @@ bin/
 .DS_Store
 
 ### Pdf ###
+
+### Java class files ###
+*.class
