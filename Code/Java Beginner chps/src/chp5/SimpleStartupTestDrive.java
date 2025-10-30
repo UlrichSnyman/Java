@@ -5,7 +5,7 @@ public class SimpleStartupTestDrive {
   public static void main(String[] args) {
     SimpleStartup dot = new SimpleStartup();
 
-    // Create a test location for the startup.
+    // Create a matchTest location for the startup.
     int[] locations = {2, 3, 4};
     dot.setLocationCells(locations);
 
@@ -14,11 +14,11 @@ public class SimpleStartupTestDrive {
     String result = dot.checkYourself(userGuess);
 
     String testResult = "failed";
-    // If it's a "hit", the test passed.
+    // If it's a "hit", the matchTest passed.
     if (result.equals("hit")) {
       testResult = "passed";
     }
-    // Print the test result.
+    // Print the matchTest result.
     System.out.println(testResult);
   }
 }

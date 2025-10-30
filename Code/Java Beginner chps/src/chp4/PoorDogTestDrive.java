@@ -20,7 +20,7 @@ class PoorDog {
   }
 }
 
-// This is the test class for the PoorDog class.
+// This is the matchTest class for the PoorDog class.
 public class PoorDogTestDrive {
   // The main method, where the program execution begins.
   public static void main(String[] args) {

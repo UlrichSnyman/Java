@@ -111,25 +111,23 @@ public class Main {
             return a.getKey().compareTo(b.getKey());
         });
         
-        // Display rankings
-        int rank = 1;
-        int previousPoints = -1;
-        int actualPosition = 1;
-        
+        // Display rankings (dense ranking: 1, 2, 2, 3, 3)
+        int currentRank = 0;
+        Integer previousPoints = null;
+
         for (Map.Entry<String, Integer> entry : teamList) {
             String teamName = entry.getKey();
             int points = entry.getValue();
             
-            // Update rank only if points changed
-            if (points != previousPoints) {
-                rank = actualPosition;
+            // Increase rank only when points change
+            if (previousPoints == null || points != previousPoints) {
+                currentRank++;
             }
             
             String pointsText = (points == 1) ? "pt" : "pts";
-            System.out.println(rank + ". " + teamName + ", " + points + " " + pointsText);
+            System.out.println(currentRank + ". " + teamName + ", " + points + " " + pointsText);
             
             previousPoints = points;
-            actualPosition++;
         }
     }
 }
